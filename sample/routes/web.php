@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('tasks');
 });
+
+Route::get('foo', function() {
+  return 'Foo!';
+});
+
+Route::get('foo/foo1', 'FooController@foo1');
