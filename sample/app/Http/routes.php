@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
  * 全タスク表示
  */
 Route::get('/', function () {
+  return view('welcome');
     //
 });
 
