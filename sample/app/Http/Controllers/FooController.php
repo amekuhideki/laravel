@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 
 class FooController extends Controller
 {
-    public function foo1()
+    public function foo2()
     {
-      return 'Foo1!!';
+      return view('foo.foo2', [
+        'title' => 'Foo2',
+        'body' => 'My first Larabel.'
+      ]);
     }
 }
