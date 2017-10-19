@@ -17,6 +17,4 @@ Route::get('/', function () {
 
 Route::get('/basic_request', 'HogeController@basic_request');
 
-Route::get('/with_headers', 'HogeController@with_headers');
-
 Route::get('foo/foo2', 'FooController@foo2');
