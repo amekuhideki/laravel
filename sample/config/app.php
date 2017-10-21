@@ -2,7 +2,7 @@
 
 return [
     'rakuten_url' => env('RAKUTEN_URL'),
-
+    'rakuten_path' => env('RAKUTEN_URL_PATH'),
     /*
     |--------------------------------------------------------------------------
     | Application Name

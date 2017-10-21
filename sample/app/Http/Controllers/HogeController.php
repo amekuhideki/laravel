@@ -15,7 +15,7 @@ class HogeController extends Controller
     $client = new \GuzzleHttp\Client( [
       'base_uri' => $base_url,
     ] );
-    $path = '/guzzle/guzzle';
+    $path = config('app.rakuten_path');
     $response = $client->request( 'GET', $path,
      [
        'allow_redirects' => true,
