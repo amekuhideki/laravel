@@ -10,7 +10,8 @@ use GuzzleHttp\Psr7\Request;
 class HogeController extends Controller
 {
   public function basic_request() {
-    $base_url = 'https://github.com';
+
+    $base_url = config('app.rakuten_url');
     $client = new \GuzzleHttp\Client( [
       'base_uri' => $base_url,
     ] );
