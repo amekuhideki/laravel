@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('tasks');
 });
 
-Route::get('/basic_request', 'HogeController@basic_request');
+Route::get('/rakuten_request', 'HogeController@basic_request');
 
 Route::get('foo/foo2', 'FooController@foo2');
