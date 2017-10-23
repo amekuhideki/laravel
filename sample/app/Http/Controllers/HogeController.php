@@ -16,12 +16,12 @@ class HogeController extends Controller
       'base_uri' => $base_url,
     ] );
     $path = config('app.rakuten_path');
-
+    $str = 'みず';
     $response = $client->request('GET',$path,
      [
        'query' => [
          'format' => 'json',
-         'itemName' => '本棚',
+         'keyword' => urldecode($str),
          'shopCode' => 'rakuten24',
          'applicationId' => config('app.rakuten_api'),
        ]
