@@ -16,7 +16,7 @@ class HogeController extends Controller
       'base_uri' => $base_url,
     ] );
     $path = config('app.rakuten_path');
-    $str = 'みず';
+    $str = '水';
     $response = $client->request('GET',$path,
      [
        'query' => [
@@ -27,7 +27,7 @@ class HogeController extends Controller
        ]
      ] );
 
-    $response_body = (string) $response->getBody();
-    echo $response_body;
+    $response_body = json_decode((string)$response->getBody());
+    var_dump ($response_body);
   }
 }
