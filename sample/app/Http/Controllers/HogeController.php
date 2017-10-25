@@ -16,18 +16,28 @@ class HogeController extends Controller
       'base_uri' => $base_url,
     ] );
     $path = config('app.rakuten_path');
-    $str = '水';
+    $str = 'ウォーター';
     $response = $client->request('GET',$path,
      [
        'query' => [
          'format' => 'json',
+         'affiliateId' => config('app.rakuten_afi_id'),
          'keyword' => urldecode($str),
          'shopCode' => 'rakuten24',
          'applicationId' => config('app.rakuten_api'),
+         'sort' => '+itemPrice',
        ]
      ] );
 
-    $response_body = json_decode((string)$response->getBody(), true);
-    var_dump ($response_body['count']);
+    $res = json_decode((string)$response->getBody(), true);
+    $page_count = $res['count'];
+    $items = $res['Items'];
+    foreach($items as $item){
+      $item_name = $item['Item']['itemName'];
+      $price = $item['Item']['itemPrice'];
+      var_dump($item);
+      // exit;
+    }
+    // var_dump ($res['Items']);
   }
 }
