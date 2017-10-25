@@ -27,7 +27,7 @@ class HogeController extends Controller
        ]
      ] );
 
-    $response_body = json_decode((string)$response->getBody());
-    var_dump ($response_body);
+    $response_body = json_decode((string)$response->getBody(), true);
+    var_dump ($response_body['count']);
   }
 }
