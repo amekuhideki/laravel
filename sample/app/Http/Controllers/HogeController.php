@@ -44,10 +44,10 @@ class HogeController extends Controller
   public function yahoo_request() {
     $base_url = config('app.yahoo_url');
     $client = new \GuzzleHttp\Client( [
-      'base_url' => $base_url,
+      'base_uri' => $base_url,
     ]);
     $path = config('app.yahoo_path');
-    $str = 'vaio';
+    $str = '水';
     $response = $client->request('GET', $path,
       [
         'query' => [
@@ -55,6 +55,7 @@ class HogeController extends Controller
           'query' => $str,
         ]
       ]);
-    var_dump($response);
+    $res = json_decode((string)$response->getBody(), true);
+    var_dump($res);
   }
 }
