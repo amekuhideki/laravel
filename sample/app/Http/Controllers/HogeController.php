@@ -47,8 +47,14 @@ class HogeController extends Controller
       'base_url' => $base_url,
     ]);
     $path = config('app.yahoo_path');
-    
-    var_dump($path);
-    var_dump($base_url);
+    $str = 'vaio';
+    $response = $client->request('GET', $path,
+      [
+        'query' => [
+          'appid' => config('app.yahoo_api'),
+          'query' => $str,
+        ]
+      ]);
+    var_dump($response);
   }
 }
