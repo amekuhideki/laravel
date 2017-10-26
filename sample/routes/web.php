@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::get('/rakuten_request', 'HogeController@rakuten_request');
 
+Route::get('/yahoo_request', 'HogeController@yahoo_request');
+
 Route::get('foo/foo2', 'FooController@foo2');

@@ -40,4 +40,9 @@ class HogeController extends Controller
     }
     // var_dump ($res['Items']);
   }
+
+  public function yahoo_request() {
+    $base_url = config('app.yahoo_url');
+    var_dump($base_url);
+  }
 }
