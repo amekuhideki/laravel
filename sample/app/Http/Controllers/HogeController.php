@@ -43,6 +43,12 @@ class HogeController extends Controller
 
   public function yahoo_request() {
     $base_url = config('app.yahoo_url');
+    $client = new \GuzzleHttp\Client( [
+      'base_url' => $base_url,
+    ]);
+    $path = config('app.yahoo_path');
+    
+    var_dump($path);
     var_dump($base_url);
   }
 }
