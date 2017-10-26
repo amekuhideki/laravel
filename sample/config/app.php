@@ -5,6 +5,8 @@ return [
     'rakuten_path' => env('RAKUTEN_URL_PATH'),
     'rakuten_api' => env('RAKUTEN_API'),
     'rakuten_afi_id' => env('RAKUTEN_AFI_ID'),
+
+    'yahoo_url' => env('YAHOO_URL'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
