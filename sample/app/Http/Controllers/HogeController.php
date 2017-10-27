@@ -56,6 +56,13 @@ class HogeController extends Controller
         ]
       ]);
     $res = json_decode((string)$response->getBody(), true);
-    var_dump($res);
+    $count = $res['ResultSet']['totalResultsAvailable'];
+    $items = $res['ResultSet'][0]['Result'];
+    var_dump($items);
+    exit;
+    foreach ($items as $item) {
+      var_dump($item);
+      exit;
+    }
   }
 }
