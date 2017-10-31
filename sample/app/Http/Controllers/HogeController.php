@@ -36,7 +36,8 @@ class HogeController extends Controller
       $item_name = $item['Item']['itemName'];
       $price = $item['Item']['itemPrice'];
       $item_url = $item['Item']['itemUrl'];
-      var_dump($item_url);
+      $shop_name = $item['Item']['shopName'];
+      var_dump($shop_name);
       exit;
     }
     // var_dump ($res['Items']);
