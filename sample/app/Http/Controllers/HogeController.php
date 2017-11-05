@@ -69,4 +69,8 @@ class HogeController extends Controller
 exit;
     }
   }
+
+  public function search() {
+    
+  }
 }
