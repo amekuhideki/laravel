@@ -19,6 +19,6 @@ Route::get('/rakuten_request', 'HogeController@rakuten_request');
 
 Route::get('/yahoo_request', 'HogeController@yahoo_request');
 
-Route::get('search', 'HogeController@search');
+Route::get('/search/{str?}', 'HogeController@search');
 
 Route::get('foo/foo2', 'FooController@foo2');

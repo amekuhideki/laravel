@@ -70,7 +70,27 @@ exit;
     }
   }
 
-  public function search() {
-    
+  public function search($str) {
+    var_dump($str);
+    exit;
+    $rktn_url = config('app.rakuten_url');
+    $client = new \GuzzleHttp\Client( [
+      'base_uri' => $base_url,
+    ] );
+    $path = config('app.rakuten_path');
+    $response = $client->request('GET',$path,
+     [
+       'query' => [
+         'format' => 'json',
+         'affiliateId' => config('app.rakuten_afi_id'),
+         'keyword' => urldecode($str),
+         'shopCode' => 'rakuten24',
+         'applicationId' => config('app.rakuten_api'),
+         'sort' => '+itemPrice',
+       ]
+     ] );
+     $res = json_decode((string)$response->getBody(), true);
+     var_dump($str);
+     exit;
   }
 }
