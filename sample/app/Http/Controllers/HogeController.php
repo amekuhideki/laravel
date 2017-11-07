@@ -71,11 +71,9 @@ exit;
   }
 
   public function search($str) {
-    var_dump($str);
-    exit;
     $rktn_url = config('app.rakuten_url');
     $client = new \GuzzleHttp\Client( [
-      'base_uri' => $base_url,
+      'base_uri' => $rktn_url,
     ] );
     $path = config('app.rakuten_path');
     $response = $client->request('GET',$path,
@@ -90,7 +88,8 @@ exit;
        ]
      ] );
      $res = json_decode((string)$response->getBody(), true);
-     var_dump($str);
+     $pageCnt = $res['pageCount'];
+     var_dump($pageCnt);
      exit;
   }
 }
