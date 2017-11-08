@@ -32,12 +32,14 @@ class HogeController extends Controller
     $res = json_decode((string)$response->getBody(), true);
     $page_count = $res['count'];
     $items = $res['Items'];
+
     foreach($items as $item){
       $item_name = $item['Item']['itemName'];
       $price = $item['Item']['itemPrice'];
       $item_url = $item['Item']['itemUrl'];
       $shop_name = $item['Item']['shopName'];
       $shopAffiliateUrl = $item['Item']['shopAffiliateUrl'];
+      $imgUrl = $item['Item']['mediumImageUrls'][0]['imageUrl'];
       var_dump($shopAffiliateUrl);
       exit;
     }
