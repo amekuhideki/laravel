@@ -41,7 +41,6 @@ class HogeController extends Controller
       $shopAffiliateUrl = $item['Item']['shopAffiliateUrl'];
       $imgUrl = $item['Item']['mediumImageUrls'][0]['imageUrl'];
       var_dump($shopAffiliateUrl);
-      exit;
     }
     // var_dump ($res['Items']);
   }
