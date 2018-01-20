@@ -22,3 +22,9 @@ Route::get('/yahoo_request', 'HogeController@yahoo_request');
 Route::get('/search/{str?}', 'HogeController@search');
 
 Route::get('foo/foo2', 'FooController@foo2');
+
+Route::get('/', function() {
+  return view('welcome');
+});
+
+Route::get('/users', 'UserController@index');

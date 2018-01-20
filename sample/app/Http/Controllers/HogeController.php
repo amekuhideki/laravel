@@ -34,15 +34,17 @@ class HogeController extends Controller
     $items = $res['Items'];
 
     foreach($items as $item){
-      $item_name = $item['Item']['itemName'];
-      $price = $item['Item']['itemPrice'];
-      $item_url = $item['Item']['itemUrl'];
-      $shop_name = $item['Item']['shopName'];
-      $shopAffiliateUrl = $item['Item']['shopAffiliateUrl'];
-      $imgUrl = $item['Item']['mediumImageUrls'][0]['imageUrl'];
-      var_dump($shopAffiliateUrl);
+      $item_name[] = $item['Item']['itemName'];
+      $price[] = $item['Item']['itemPrice'];
+      $item_url[] = $item['Item']['itemUrl'];
+      $shop_name[] = $item['Item']['shopName'];
+      $shopAffiliateUrl[] = $item['Item']['shopAffiliateUrl'];
+      $imgUrl[] = $item['Item']['mediumImageUrls'][0]['imageUrl'];
     }
     // var_dump ($res['Items']);
+    $data['count'] = $page_count;
+    $data['item_name'] = $item_name;
+    return view('rakuten', $data);
   }
 
   public function yahoo_request() {
