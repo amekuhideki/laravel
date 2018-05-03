@@ -6,6 +6,17 @@
 </div>
 
 <div class="form-group">
+    {{-- セレクトボックス --}}
+    {!! Form::label('title', 'カテゴリ:', ['class' => 'col-sm-2 control-label']) !!}
+    <div class="col-sm-10">
+        {!! Form::select('category_id',
+            $categories,
+              isset($post->category->id) ? $post->category->id : null )
+        !!}
+    </div>
+</div>
+
+<div class="form-group">
     {!! Form::label('body', '内容:', ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
         {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
